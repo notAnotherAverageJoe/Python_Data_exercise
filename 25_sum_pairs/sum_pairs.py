@@ -21,3 +21,10 @@ def sum_pairs(nums, goal):
         >>> sum_pairs([11, 20, 4, 2, 1, 5], 100)
         ()
     """
+    complements = {}  # created a dictionary to store complements and their indices
+    for num in nums:
+        complement = goal - num
+        if complement in complements:
+            return (complements[complement], num)
+        complements[num] = num  # This stores the index of the number
+    return () 
